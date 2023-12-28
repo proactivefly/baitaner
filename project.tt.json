@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "baitaner",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}
