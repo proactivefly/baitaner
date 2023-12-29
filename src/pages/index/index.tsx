@@ -10,7 +10,7 @@ export default function Index() {
 
   return (
     <View className='index'>
-      <Text>Hello world!</Text>
+      <Text>Hello world! 我的全民摆摊</Text>
     </View>
   )
 }

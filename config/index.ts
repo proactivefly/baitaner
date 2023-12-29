@@ -1,4 +1,5 @@
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
+import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss/webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import devConfig from './dev'
 import prodConfig from './prod'
@@ -31,6 +32,20 @@ export default defineConfig(async (merge, { command, mode }) => {
     cache: {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
+    weapp: {
+      module: {
+        postcss: {
+          // css modules 功能开关与相关配置
+          cssModules: {
+            enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
+            config: {
+              namingPattern: 'module', // 转换模式，取值为 global/module，下文详细说明
+              generateScopedName: '[name]__[local]___[hash:base64:5]'
+            }
+          }
+        }
+      }
+    },
     mini: {
       postcss: {
         pxtransform: {
@@ -55,6 +70,18 @@ export default defineConfig(async (merge, { command, mode }) => {
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
+        chain.merge({
+          plugin: {
+            install: {
+              plugin: UnifiedWebpackPluginV5,
+              args: [{
+                appType: 'taro',
+                // disabled: WeappTailwindcssDisabled,
+                rem2rpx: true
+              }]
+            }
+          }
+        })
       }
     },
     h5: {
