@@ -9,7 +9,7 @@ export default function Index() {
   })
 
   return (
-    <View className='index'>
+    <View className='text-[100px] index p-6'>
       <Text>Hello world! 我的全民摆摊</Text>
     </View>
   )
