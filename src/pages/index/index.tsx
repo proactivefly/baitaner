@@ -10,9 +10,8 @@ export default function Index() {
   })
 
   return (
-    <View className='text-[100px] index p-6'>
+    <View className='text-[50px] index p-6'>
       <Text>Hello world! 我的全民摆摊</Text>
-      <Button openType='openSetting'>打开授权设置页</Button>
       <Button type='primary'>主要按钮</Button>
       <Button type='info'>信息按钮</Button>
       <Button type='default'>默认按钮</Button>
