@@ -8,6 +8,9 @@ dependencies:
   '@babel/runtime':
     specifier: ^7.21.5
     version: 7.23.6
+  '@nutui/icons-react-taro':
+    specifier: ^1.0.0
+    version: 1.0.0
   '@nutui/nutui-react-taro':
     specifier: ^2.3.4
     version: 2.3.4(react-dom@18.2.0)(react@18.2.0)
