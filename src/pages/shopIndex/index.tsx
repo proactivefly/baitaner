@@ -1,6 +1,7 @@
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
-import { Button , Swiper  , ImagePreview } from '@nutui/nutui-react-taro';
+import { Button , Swiper  , ImagePreview ,Rate} from '@nutui/nutui-react-taro';
+import { StarFill, User } from '@nutui/icons-react-taro'
 import { useState } from 'react'
 import InfoItem from "@/components/descItem/index"
 
@@ -14,6 +15,9 @@ export default function Index() {
   }
   const [showPreview, setShowPreview] = useState(false)
   const [previewIndex, setPreviewIndex] = useState<any>(1)
+  const handlerCollectChange=(value)=>{
+    console.log(value)
+  }
   const hidePreview = () => {
     setShowPreview(false)
   }
@@ -67,7 +71,11 @@ export default function Index() {
       </View>
       {/* info 描述信息 */}
       <View className='p-3 info'>
-        <Text className='mb-3 text-xl font-medium'>店铺名称</Text>
+        <View className='flex justify-between'>
+          <Text className='mb-3 text-xl font-medium'>店铺名称</Text>
+          <Rate className='mr-1' count={1} defaultValue={0} checkedIcon={<StarFill color='rgb(255, 200, 0)' />} onChange={handlerCollectChange} />
+        </View>
+
         {
           info.map((item,index)=>{
             return <InfoItem info={item} key={index} />
