@@ -2,6 +2,7 @@ import { Cell, Button , Avatar} from '@nutui/nutui-react-taro'
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { ArrowRight } from '@nutui/icons-react-taro'
+import TabBar from "@/components/tabbar/index"
 import "./index.styl"
 
 export default function Index(){
@@ -31,10 +32,19 @@ export default function Index(){
           title='我的收藏'
           extra={<ArrowRight />}
           align='center'
-          onClick={()=>onJumpclick('/pages/myCollect/index')}
+          onClick={()=>onJumpclick('/pages/collect/index')}
+        />
+        <Cell
+          title='问题反馈'
+          extra={<ArrowRight />}
+          align='center'
+          onClick={()=>onJumpclick('/pages/feedback/index')}
         />
         <View className='btn'>
           <Button block type='primary'>退出</Button>
+        </View>
+        <View>
+          <TabBar />
         </View>
       </>
   )

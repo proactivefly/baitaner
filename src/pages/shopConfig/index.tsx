@@ -1,6 +1,6 @@
+import { Cell, Button, Input, TextArea, Uploader, Picker, Form} from '@nutui/nutui-react-taro'
+import Taro from "@tarojs/taro"
 import { View } from "@tarojs/components"
-import Taro from "@tarojs/taro";
-import { Form, Button, Input, TextArea, Uploader, Picker,Cell } from '@nutui/nutui-react-taro';
 import {ArrowRight} from "@nutui/icons-react-taro"
 
 const App = () => {
@@ -48,13 +48,6 @@ const App = () => {
           <Input placeholder='请输入摊位名称' type='text' />
         </Form.Item>
         <Form.Item
-          label='简介'
-          name='short'
-          rules={[{ required: true, message: "请输入摊位简介" }]}
-        >
-          <Input placeholder='请输入摊位简介' maxLength={20} />
-        </Form.Item>
-        <Form.Item
           label='经营种类'
           name='type'
           trigger='onConfirm'
@@ -85,6 +78,13 @@ const App = () => {
               )
             }}
           </Picker>
+        </Form.Item>
+        <Form.Item
+          label='简介'
+          name='short'
+          rules={[{ required: true, message: "请输入摊位简介" }]}
+        >
+          <Input placeholder='请输入摊位简介' maxLength={20} />
         </Form.Item>
         <Form.Item
           label='详细介绍'

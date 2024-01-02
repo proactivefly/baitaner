@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "baitaner",
   "description": "一个查找附近摆摊儿的小程序",
-  "appid": "wx67b1c709fac1cb81",
+  "appid": "wxf083c3ca2b94d792",
   "setting": {
     "urlCheck": true,
     "es6": false,
