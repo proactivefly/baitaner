@@ -2,13 +2,14 @@ import { Cell, Button, Input, TextArea, Uploader, Picker, Form} from '@nutui/nut
 import Taro from "@tarojs/taro"
 import { View } from "@tarojs/components"
 import {ArrowRight} from "@nutui/icons-react-taro"
+import { useState } from 'react'
 
 const App = () => {
   const submitFailed = (values,error: any) => {
     console.log('values',values)
     Taro.showToast({ title: JSON.stringify(error), icon: 'error' })
   }
-
+  const [status,setStatus]=useState(true)
   const submitSucceed = (values: any) => {
     Taro.showToast({ title: JSON.stringify(values), icon: 'success' })
   }
@@ -19,6 +20,11 @@ const App = () => {
     {text:'服务',value:3},
     {text:'其他',value:4},
   ]
+  const back=()=>{
+    Taro.navigateBack({
+      delta:1
+    })
+  }
   const formatter = (value: string) => value.replace(/\s/g, "")
   return (
     <>
@@ -35,11 +41,18 @@ const App = () => {
               width: '100%',
             }}
           >
-            <Button formType='submit' type='primary'>
-              提交
-            </Button>
-            <Button formType='reset' style={{ marginLeft: '20px' }}>
-              重置
+            {
+              status?
+              <Button formType='submit' type='primary'>
+                维护摊位
+              </Button>
+              :
+              <Button formType='submit' type='primary'>
+                提交
+              </Button>
+            }
+            <Button style={{ marginLeft: '20px' }} onClick={back}>
+              返回
             </Button>
           </View>
         }
@@ -49,7 +62,7 @@ const App = () => {
           name='name'
           rules={[{ required: true, message: "请输入名称" }]}
         >
-          <Input placeholder='请输入摊位名称' type='text' />
+          <Input placeholder='请输入摊位名称' type='text'  disabled={status} />
         </Form.Item>
         <Form.Item
           label='经营种类'
@@ -61,7 +74,7 @@ const App = () => {
             ref.open()
           }}
         >
-          <Picker options={[pickerOptions]}>
+          <Picker options={[pickerOptions]} title='请选择经营范围'>
             {(value: any) => {
               return (
                 <Cell
@@ -88,14 +101,14 @@ const App = () => {
           name='short'
           rules={[{ required: true, message: "请输入摊位简介" }]}
         >
-          <Input placeholder='请输入摊位简介' maxLength={20} />
+          <Input placeholder='请输入摊位简介' maxLength={20}  disabled={status} />
         </Form.Item>
         <Form.Item
           label='详细介绍'
           name='detail'
           rules={[{ required: true, message: "请输入详细介绍" }]}
         >
-          <TextArea placeholder='请输入详细介绍' showCount maxLength={100} />
+          <TextArea placeholder='请输入详细介绍' showCount maxLength={100}  disabled={status} />
         </Form.Item>
         <Form.Item
           label='图片'
@@ -112,13 +125,13 @@ const App = () => {
             },
           ]}
         >
-          <Uploader url={uploadUrl} maxCount='5' />
+          <Uploader url={uploadUrl} maxCount='5' disabled={status} />
         </Form.Item>
         <Form.Item label='电话' name='mobile'>
-          <Input placeholder='请输入电话号码' maxLength={11} type='number' formatter={formatter} formatTrigger='onChange' />
+          <Input placeholder='请输入电话号码' maxLength={11} type='number' formatter={formatter} formatTrigger='onChange' disabled={status} />
         </Form.Item>
         <Form.Item label='微信号' name='wechat'>
-          <Input placeholder='请输入微信号码' formatter={formatter} formatTrigger='onChange' />
+          <Input placeholder='请输入微信号码' formatter={formatter} formatTrigger='onChange' disabled={status} />
         </Form.Item>
       </Form>
     </>

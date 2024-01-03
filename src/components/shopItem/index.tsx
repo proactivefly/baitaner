@@ -7,7 +7,7 @@ import "./index.styl"
 export default function ShopItem(props){
 
   useLoad(() => {
-    console.log(' ShopItem Page loaded.')
+    // console.log(' ShopItem Page loaded.')
   })
 
   const url='https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg'

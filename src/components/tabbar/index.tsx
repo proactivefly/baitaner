@@ -1,14 +1,13 @@
 import { Tabbar } from '@nutui/nutui-react-taro'
 import { Home, User } from '@nutui/icons-react-taro';
-import Taro, { useLoad , getCurrentInstance} from '@tarojs/taro'
+import Taro, { useLoad , useRouter} from '@tarojs/taro'
 import { useState } from 'react';
 
-export default function Index (props){
-  console.log(props)
+export default function Index (){
   const [active,setActive]=useState(0)
-  const { path } =getCurrentInstance().router as any
+  const { path } =useRouter()
   const handleSwitch=(e)=>{
-    console.log(e)
+    // console.log(e)
     setActive(e)
     let url=''
     if(e===0){
@@ -20,13 +19,15 @@ export default function Index (props){
       url:url
     })
   }
+  // 等同于页面的 onLoad 生命周期钩子。
   useLoad(()=>{
-    console.log(path)
+    // console.log(path)
     switch(path){
       case '/pages/index/index': setActive(0);break
       case '/pages/person/index': setActive(1);break
     }
   })
+
   return (
     <Tabbar onSwitch={handleSwitch} fixed  defaultValue={0} value={active}>
       <Tabbar.Item title='首页' icon={<Home size={18} />} />

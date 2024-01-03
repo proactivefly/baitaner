@@ -1,5 +1,5 @@
 import { PropsWithChildren,useEffect } from 'react'
-import { useLaunch } from '@tarojs/taro'
+import Taro,{ useLaunch } from '@tarojs/taro'
 import './app.styl'
 
 function App({ children }: PropsWithChildren<any>) {
@@ -10,7 +10,13 @@ function App({ children }: PropsWithChildren<any>) {
   //
   useEffect(()=>{
     // console.log('useEffect')
-  })
+    Taro.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        console.log(res)
+      }
+      })
+  },[])
 
   // children 是将要会渲染的页面
   return children

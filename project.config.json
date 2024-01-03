@@ -1,8 +1,6 @@
 {
   "miniprogramRoot": "dist/",
-  "projectname": "baitaner",
   "description": "一个查找附近摆摊儿的小程序",
-  "appid": "wxf083c3ca2b94d792",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -14,18 +12,23 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "coverView": false,
+    "showShadowRootInWxmlPanel": false,
+    "packNpmRelationList": [],
+    "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
-  "libVersion": "3.3.0",
   "srcMiniprogramRoot": "dist/",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "libVersion": "3.3.0",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "wxf083c3ca2b94d792"
 }
