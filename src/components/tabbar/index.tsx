@@ -26,8 +26,8 @@ export default function Index (){
     // console.log(path)
     switch(path){
       case '/pages/index/index': setActive(0);break
-      case '/pages/person/index': setActive(1);break
-      case '/pages/myShop/index': setActive(2);break
+      case '/pages/myShop/index': setActive(1);break
+      case '/pages/person/index': setActive(2);break
     }
   })
 

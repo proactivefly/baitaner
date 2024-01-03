@@ -1,7 +1,8 @@
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import { Switch , Swiper  , ImagePreview ,Rate,Tag,Dialog} from '@nutui/nutui-react-taro';
-import { StarFill, User } from '@nutui/icons-react-taro'
+import { StarFill } from '@nutui/icons-react-taro'
+import TabBar from "@/components/tabbar/index"
 import { useState } from 'react'
 import InfoItem from "@/components/descItem/index"
 
@@ -73,7 +74,7 @@ export default function Index() {
     }
   ]
   return (
-    <View className='shop-index'>
+    <View className='pb-[200px] shop-index'>
       <View className='banner'>
         <Swiper
           defaultValue={0}
@@ -127,6 +128,9 @@ export default function Index() {
         }
       </View>
       <Dialog id='online' />
+      <View>
+        <TabBar />
+      </View>
     </View>
   )
 }
