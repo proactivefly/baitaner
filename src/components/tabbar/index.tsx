@@ -10,12 +10,10 @@ export default function Index (){
     // console.log(e)
     setActive(e)
     let url=''
-    if(e===0){
-      url='/pages/index/index'
-    }else if(e===2){
-      url='/pages/person/index'
-    }else if(e==1){
-      url='/pages/myShop/index'
+    switch(e){
+      case 0: url='/pages/index/index';break
+      case 1: url='/pages/myShop/index';break
+      case 2: url='/pages/person/index';break
     }
     Taro.redirectTo({
       url:url
