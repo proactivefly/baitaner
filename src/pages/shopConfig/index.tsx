@@ -43,7 +43,7 @@ const App = () => {
           >
             {
               status?
-              <Button formType='submit' type='primary'>
+              <Button type='success' onClick={()=>setStatus(false)}>
                 维护摊位
               </Button>
               :
@@ -71,7 +71,9 @@ const App = () => {
           rules={[{ required: true, message: "请选择经营种类" }]}
           getValueFromEvent={(...args) => args[1]}
           onClick={(_, ref: any) => {
-            ref.open()
+            if(!status){
+              ref.open()
+            }
           }}
         >
           <Picker options={[pickerOptions]} title='请选择经营范围'>

@@ -14,7 +14,6 @@ export default function App(){
     init()
   },[])
   const loadMore = async () => {
-    console.log("loadmore")
     await sleep(2000)
     const curLen = dataList.length
     for (let i = curLen; i < curLen + 10; i++) {
@@ -37,7 +36,7 @@ export default function App(){
   }
 
   const init = () => {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 3; i++) {
       dataList.push(`${i}`)
     }
     setDataList([...dataList])
