@@ -1,11 +1,14 @@
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
-import { Button , Swiper  , ImagePreview ,Rate} from '@nutui/nutui-react-taro';
+import { Swiper  , ImagePreview ,Rate,Tag} from '@nutui/nutui-react-taro';
 import { StarFill, User } from '@nutui/icons-react-taro'
 import { useState } from 'react'
 import InfoItem from "@/components/descItem/index"
 
 export default function Index() {
+  const [onLine,setOnLine]=useState(true)
+  const [showPreview, setShowPreview] = useState(false)
+  const [previewIndex, setPreviewIndex] = useState<any>(1)
   useLoad(() => {
     console.log('Page loaded.')
   })
@@ -13,8 +16,7 @@ export default function Index() {
     setShowPreview(true)
     setPreviewIndex(e+1)
   }
-  const [showPreview, setShowPreview] = useState(false)
-  const [previewIndex, setPreviewIndex] = useState<any>(1)
+
   const handlerCollectChange=(value)=>{
     console.log(value)
   }
@@ -84,7 +86,12 @@ export default function Index() {
       {/* info 描述信息 */}
       <View className='p-3 info'>
         <View className='flex justify-between'>
-          <Text className='mb-3 text-xl font-medium'>店铺名称</Text>
+          <View>
+            <Text className='mb-3 text-xl font-medium'>店铺名称 </Text>
+            {
+              onLine?<Tag type='success' className='ml-2'>在线</Tag>:<Tag className='ml-2' background='#E9E9E9' color='#999999'>标签</Tag>
+            }
+          </View>
           <Rate className='mr-1' count={1} defaultValue={0} checkedIcon={<StarFill color='rgb(255, 200, 0)' />} onChange={handlerCollectChange} />
         </View>
 
