@@ -5,6 +5,7 @@ import { StarFill } from '@nutui/icons-react-taro'
 import TabBar from "@/components/tabbar/index"
 import { useState } from 'react'
 import InfoItem from "@/components/descItem/index"
+import './index.styl'
 
 export default function Index() {
   useLoad(() => {
