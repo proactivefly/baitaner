@@ -100,7 +100,8 @@ export default defineConfig(async (merge, { command, mode }) => {
             }
           }
         })
-      }
+      },
+      debugReact:true
     },
     h5: {
       publicPath: '/',
