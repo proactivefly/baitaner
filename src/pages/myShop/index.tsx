@@ -1,6 +1,6 @@
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
-import { Switch , Swiper  , ImagePreview ,Rate,Tag,Dialog} from '@nutui/nutui-react-taro';
+import { Switch, Swiper, ImagePreview , Rate, Tag, Dialog} from '@nutui/nutui-react-taro';
 import { StarFill } from '@nutui/icons-react-taro'
 import TabBar from "@/components/tabbar/index"
 import { useState } from 'react'

@@ -1,7 +1,7 @@
 import { View, Text } from '@tarojs/components'
 import { useLoad } from '@tarojs/taro'
 import { Button  } from '@nutui/nutui-react-taro';
-import './demo.styl'
+import './index.styl'
 
 export default function Index() {
 
