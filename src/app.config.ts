@@ -1,5 +1,6 @@
 export default defineAppConfig({
   pages: [
+    'pages/demo/demo',
     'pages/index/index',
     'pages/demo/demo',
     'pages/myShop/index',
@@ -8,7 +9,7 @@ export default defineAppConfig({
     'pages/collect/index',
     'pages/shopConfig/index',
     'pages/person/index',
-    'pages/shopIndex/index',
+    'pages/shopIndex/index'
   ],
   window: {
     backgroundTextStyle: 'light',
