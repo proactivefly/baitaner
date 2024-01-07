@@ -1,7 +1,7 @@
 import { View , Text} from '@tarojs/components'
-import { Location } from '@nutui/icons-react-taro'
 import Taro, { useLoad } from '@tarojs/taro'
 import { Skeleton } from '@nutui/nutui-react-taro'
+import { Location } from '@nutui/icons-react-taro'
 import "./index.styl"
 
 export default function ShopItem(props){

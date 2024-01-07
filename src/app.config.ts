@@ -1,13 +1,12 @@
 export default defineAppConfig({
   pages: [
-    'pages/demo/demo',
+    'pages/demo/index',
     'pages/index/index',
-    'pages/demo/demo',
     'pages/myShop/index',
     'pages/feedback/index',
     'pages/collect/index',
-    'pages/shopConfig/index',
     'pages/person/index',
+    'pages/shopConfig/index',
     'pages/shopIndex/index'
   ],
   window: {

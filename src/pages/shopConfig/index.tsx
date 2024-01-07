@@ -1,8 +1,8 @@
-import { Cell, Button, Input, TextArea, Uploader, Picker, Form} from '@nutui/nutui-react-taro'
+import { useState } from 'react'
 import Taro from "@tarojs/taro"
 import { View } from "@tarojs/components"
-import {ArrowRight} from "@nutui/icons-react-taro"
-import { useState } from 'react'
+import { Cell, Form, Input, TextArea, Uploader, Picker , Button} from '@nutui/nutui-react-taro'
+import { ArrowRight } from "@nutui/icons-react-taro"
 
 const App = () => {
   const submitFailed = (values,error: any) => {

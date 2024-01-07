@@ -1,4 +1,4 @@
-import { View , Text} from "@tarojs/components";
+import { View , Text } from "@tarojs/components";
 
 export default function Index(props){
   const {label,value}=props.info

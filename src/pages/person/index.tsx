@@ -1,9 +1,9 @@
-import { Cell, Button , Avatar} from '@nutui/nutui-react-taro'
+import { useState } from 'react'
 import Taro from '@tarojs/taro'
 import { View , Text } from '@tarojs/components'
+import { Cell, Button , Avatar} from '@nutui/nutui-react-taro'
 import { ArrowRight } from '@nutui/icons-react-taro'
 import TabBar from "@/components/tabbar/index"
-import { useState } from 'react'
 import "./index.styl"
 
 export default function Index(){

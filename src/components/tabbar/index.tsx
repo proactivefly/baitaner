@@ -1,7 +1,7 @@
-import { Tabbar } from '@nutui/nutui-react-taro'
-import { Home, Find,User } from '@nutui/icons-react-taro';
+import { useState } from 'react'
 import Taro, { useLoad , useRouter} from '@tarojs/taro'
-import { useState } from 'react';
+import { Tabbar } from '@nutui/nutui-react-taro'
+import { Home, Find, User} from '@nutui/icons-react-taro'
 
 export default function Index (){
   const [active,setActive]=useState(0)

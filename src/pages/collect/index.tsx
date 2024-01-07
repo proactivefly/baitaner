@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import ShopItem from "@/components/shopItem/index"
-import { View  } from "@tarojs/components"
-import { Empty  , InfiniteLoading , Loading} from '@nutui/nutui-react-taro'
 import Taro from '@tarojs/taro'
+import { View  } from "@tarojs/components"
+import { Empty  , InfiniteLoading , Loading } from '@nutui/nutui-react-taro'
+import ShopItem from "@/components/shopItem/index"
 import './index.styl'
 
 export default function App(){

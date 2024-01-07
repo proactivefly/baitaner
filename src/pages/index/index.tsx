@@ -1,9 +1,9 @@
 import { View } from '@tarojs/components'
 // import BHeader from "@/components/header/index"
-import ShopItem from '@/components/shopItem/index'
-import TabBar from "@/components/tabbar/index"
 import { useLoad } from '@tarojs/taro'
 import { Swiper , BackTop, SafeArea,Divider } from '@nutui/nutui-react-taro'
+import ShopItem from '@/components/shopItem/index'
+import TabBar from "@/components/tabbar/index"
 import './index.styl'
 
 export default function Index() {

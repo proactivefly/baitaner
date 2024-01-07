@@ -1,8 +1,8 @@
-import { View, Text } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
-import { Swiper  , ImagePreview ,Rate,Tag} from '@nutui/nutui-react-taro';
-import { StarFill } from '@nutui/icons-react-taro'
 import { useState } from 'react'
+import { useLoad } from '@tarojs/taro'
+import { View, Text } from '@tarojs/components'
+import { Swiper, ImagePreview ,Rate,Tag} from '@nutui/nutui-react-taro';
+import { StarFill } from '@nutui/icons-react-taro'
 import InfoItem from "@/components/descItem/index"
 
 export default function Index() {
